@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="semicircle.css" />
+
+</head>
+
+<div role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="--value: 75"></div>
+
+<body>
+<script>
+    // JavaScript function to generate a random value between 0 and 100
+    function getRandomValue() {
+      return Math.floor(Math.random() * 101); // Generates a random integer between 0 and 100
+    }
+  
+    // Get the progress bar element
+    const progressBar = document.querySelector('[role="progressbar"]');
+  
+    // Update the --value CSS variable with the random value
+    function updateProgressBar() {
+      const randomValue = getRandomValue();
+      progressBar.style.setProperty('--value', randomValue);
+    }
+  
+    // Initial update
+    updateProgressBar();
+  
+    // You can update the value periodically, for example, every 5 seconds
+    setInterval(updateProgressBar, 5000); // Update every 5 seconds
+  </script>
+  </body>
